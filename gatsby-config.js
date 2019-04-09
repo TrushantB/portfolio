@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,6 +14,15 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: 'hs4b934pe2ee',
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: '64a36b5bc825abf1e69c47e98ab5d4c5757d40e0c7e18cf6d8bfabdb306aaa4c',
+      },
+    },
+    'gatsby-transformer-remark',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
